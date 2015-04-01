@@ -1,0 +1,19 @@
+<template>
+  <section>
+    <h2>${issue.name}</h2>
+
+    <p>${issue.text}</p>
+
+    <div repeat.for="comment of issue.comments" id="${comment.id}">
+      <a href="#/${$parent.projectId}/${$parent.issue.id}/#${comment.id}">Link</a>
+      ${comment.text}
+    </div>
+    <form role="form" submit.delegate="createComment()">
+      <div class="form-group">
+        <label for="description">Comments</label>
+        <input type="text" value.bind="comment.text" class="form-control" id="description" placeholder="Leave a Comment">
+      </div>
+      <button type="submit" class="btn btn-default">Comment</button>
+    </form>
+  </section>
+</template>

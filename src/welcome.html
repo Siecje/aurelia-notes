@@ -1,0 +1,10 @@
+<template>
+  <section>
+    <h2>${heading}</h2>
+
+    <ul>
+      <li repeat.for="project of projects"><a href="#/${project.id}">${project.name}</a></li>
+    </ul>
+    <a href="#/new">Create Project</a>
+  </section>
+</template>
